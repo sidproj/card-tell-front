@@ -2,7 +2,7 @@ import { DragDropProvider } from "@dnd-kit/react";
 import "./App.css";
 import Hand from "./components/hand";
 import { useState } from "react";
-import Card from "./components/card";
+import { Connect } from "./services/connection";
 
 function App() {
   const [played, setPlayed] = useState<string[]>([]);
@@ -32,6 +32,7 @@ function App() {
         <section id="center" className="flex flex-col">
           <Hand id="first" card_keys={played} />
           <Hand id="second" card_keys={hand} />
+        <button id="button" className="button counter" onClick={Connect}>Connect</button>
         </section>
       </DragDropProvider>
     </>
